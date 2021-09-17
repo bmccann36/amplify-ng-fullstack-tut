@@ -59,6 +59,14 @@
  */
 import 'zone.js';  // Included with Angular CLI.
 
+// this tutorial said these were needed https://docs.amplify.aws/start/getting-started/setup/q/integration/angular/#create-a-new-angular-app
+
+(window as any).global = window;
+(window as any).process = {
+  env: { DEBUG: undefined },
+};
+//? why? https://stackoverflow.com/questions/50371593/angular-6-uncaught-referenceerror-buffer-is-not-defined
+global.Buffer = global.Buffer || require('buffer').Buffer;
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
