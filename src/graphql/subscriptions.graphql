@@ -1,31 +1,34 @@
 # this is an auto generated file. This will be overwritten
-subscription OnCreateRestaurant {
-  onCreateRestaurant {
+subscription OnCreateRestaurant($owner: String!) {
+  onCreateRestaurant(owner: $owner) {
     id
     name
     description
     city
     createdAt
     updatedAt
+    owner
   }
 }
-subscription OnUpdateRestaurant {
-  onUpdateRestaurant {
+subscription OnUpdateRestaurant($owner: String!) {
+  onUpdateRestaurant(owner: $owner) {
     id
     name
     description
     city
     createdAt
     updatedAt
+    owner
   }
 }
-subscription OnDeleteRestaurant {
-  onDeleteRestaurant {
+subscription OnDeleteRestaurant($owner: String!) {
+  onDeleteRestaurant(owner: $owner) {
     id
     name
     description
     city
     createdAt
     updatedAt
+    owner
   }
 }

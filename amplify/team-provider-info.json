@@ -10,6 +10,11 @@
       "StackName": "amplify-xwordweb-dev-64721",
       "StackId": "arn:aws:cloudformation:us-east-1:466357709346:stack/amplify-xwordweb-dev-64721/a3a38200-17a4-11ec-b33b-0ec9023d0675",
       "AmplifyAppId": "d34eef07f7kswi"
+    },
+    "categories": {
+      "auth": {
+        "xwordwebfae818eb": {}
+      }
     }
   }
 }

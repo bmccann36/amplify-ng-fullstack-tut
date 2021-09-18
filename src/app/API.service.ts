@@ -78,6 +78,7 @@ export type Restaurant = {
   city: string;
   createdAt: string;
   updatedAt: string;
+  owner?: string | null;
 };
 
 export type UpdateRestaurantInput = {
@@ -131,6 +132,7 @@ export type CreateRestaurantMutation = {
   city: string;
   createdAt: string;
   updatedAt: string;
+  owner?: string | null;
 };
 
 export type UpdateRestaurantMutation = {
@@ -141,6 +143,7 @@ export type UpdateRestaurantMutation = {
   city: string;
   createdAt: string;
   updatedAt: string;
+  owner?: string | null;
 };
 
 export type DeleteRestaurantMutation = {
@@ -151,6 +154,7 @@ export type DeleteRestaurantMutation = {
   city: string;
   createdAt: string;
   updatedAt: string;
+  owner?: string | null;
 };
 
 export type GetRestaurantQuery = {
@@ -161,6 +165,7 @@ export type GetRestaurantQuery = {
   city: string;
   createdAt: string;
   updatedAt: string;
+  owner?: string | null;
 };
 
 export type ListRestaurantsQuery = {
@@ -173,6 +178,7 @@ export type ListRestaurantsQuery = {
     city: string;
     createdAt: string;
     updatedAt: string;
+    owner?: string | null;
   } | null> | null;
   nextToken?: string | null;
 };
@@ -185,6 +191,7 @@ export type OnCreateRestaurantSubscription = {
   city: string;
   createdAt: string;
   updatedAt: string;
+  owner?: string | null;
 };
 
 export type OnUpdateRestaurantSubscription = {
@@ -195,6 +202,7 @@ export type OnUpdateRestaurantSubscription = {
   city: string;
   createdAt: string;
   updatedAt: string;
+  owner?: string | null;
 };
 
 export type OnDeleteRestaurantSubscription = {
@@ -205,6 +213,7 @@ export type OnDeleteRestaurantSubscription = {
   city: string;
   createdAt: string;
   updatedAt: string;
+  owner?: string | null;
 };
 
 @Injectable({
@@ -224,6 +233,7 @@ export class APIService {
           city
           createdAt
           updatedAt
+          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -250,6 +260,7 @@ export class APIService {
           city
           createdAt
           updatedAt
+          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -276,6 +287,7 @@ export class APIService {
           city
           createdAt
           updatedAt
+          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -299,6 +311,7 @@ export class APIService {
           city
           createdAt
           updatedAt
+          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -325,6 +338,7 @@ export class APIService {
             city
             createdAt
             updatedAt
+            owner
           }
           nextToken
         }
@@ -344,12 +358,13 @@ export class APIService {
     )) as any;
     return <ListRestaurantsQuery>response.data.listRestaurants;
   }
-  OnCreateRestaurantListener: Observable<
+  OnCreateRestaurantListener(
+    owner: string
+  ): Observable<
     SubscriptionResponse<Pick<__SubscriptionContainer, "onCreateRestaurant">>
-  > = API.graphql(
-    graphqlOperation(
-      `subscription OnCreateRestaurant {
-        onCreateRestaurant {
+  > {
+    const statement = `subscription OnCreateRestaurant($owner: String!) {
+        onCreateRestaurant(owner: $owner) {
           __typename
           id
           name
@@ -357,19 +372,26 @@ export class APIService {
           city
           createdAt
           updatedAt
+          owner
         }
-      }`
-    )
-  ) as Observable<
-    SubscriptionResponse<Pick<__SubscriptionContainer, "onCreateRestaurant">>
-  >;
+      }`;
+    const gqlAPIServiceArguments: any = {
+      owner
+    };
+    return API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    ) as Observable<
+      SubscriptionResponse<Pick<__SubscriptionContainer, "onCreateRestaurant">>
+    >;
+  }
 
-  OnUpdateRestaurantListener: Observable<
+  OnUpdateRestaurantListener(
+    owner: string
+  ): Observable<
     SubscriptionResponse<Pick<__SubscriptionContainer, "onUpdateRestaurant">>
-  > = API.graphql(
-    graphqlOperation(
-      `subscription OnUpdateRestaurant {
-        onUpdateRestaurant {
+  > {
+    const statement = `subscription OnUpdateRestaurant($owner: String!) {
+        onUpdateRestaurant(owner: $owner) {
           __typename
           id
           name
@@ -377,19 +399,26 @@ export class APIService {
           city
           createdAt
           updatedAt
+          owner
         }
-      }`
-    )
-  ) as Observable<
-    SubscriptionResponse<Pick<__SubscriptionContainer, "onUpdateRestaurant">>
-  >;
+      }`;
+    const gqlAPIServiceArguments: any = {
+      owner
+    };
+    return API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    ) as Observable<
+      SubscriptionResponse<Pick<__SubscriptionContainer, "onUpdateRestaurant">>
+    >;
+  }
 
-  OnDeleteRestaurantListener: Observable<
+  OnDeleteRestaurantListener(
+    owner: string
+  ): Observable<
     SubscriptionResponse<Pick<__SubscriptionContainer, "onDeleteRestaurant">>
-  > = API.graphql(
-    graphqlOperation(
-      `subscription OnDeleteRestaurant {
-        onDeleteRestaurant {
+  > {
+    const statement = `subscription OnDeleteRestaurant($owner: String!) {
+        onDeleteRestaurant(owner: $owner) {
           __typename
           id
           name
@@ -397,10 +426,16 @@ export class APIService {
           city
           createdAt
           updatedAt
+          owner
         }
-      }`
-    )
-  ) as Observable<
-    SubscriptionResponse<Pick<__SubscriptionContainer, "onDeleteRestaurant">>
-  >;
+      }`;
+    const gqlAPIServiceArguments: any = {
+      owner
+    };
+    return API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    ) as Observable<
+      SubscriptionResponse<Pick<__SubscriptionContainer, "onDeleteRestaurant">>
+    >;
+  }
 }

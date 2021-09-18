@@ -26,10 +26,10 @@ export class AppComponent implements OnInit {
     });
 
     /* subscribe to new restaurants being created */
-    this.api.OnCreateRestaurantListener.subscribe((event: any) => {
-      const newRestaurant = event.value.data.onCreateRestaurant;
-      this.restaurants = [newRestaurant, ...this.restaurants];
-    });
+    // this.api.OnCreateRestaurantListener.subscribe((event: any) => {
+    //   const newRestaurant = event.value.data.onCreateRestaurant;
+    //   this.restaurants = [newRestaurant, ...this.restaurants];
+    // });
   }
 
   public onCreate(restaurant: Restaurant) {

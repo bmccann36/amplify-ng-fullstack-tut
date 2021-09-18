@@ -1,6 +1,12 @@
-type Restaurant @model {
+type Restaurant @model @auth(rules: [{ allow: owner }])  {
   id: ID!
   name: String!
   description: String!
   city: String!
 }
+
+# # The simplest case
+# type Post @model @auth(rules: [{ allow: owner }]) {
+#   id: ID!
+#   title: String!
+# }

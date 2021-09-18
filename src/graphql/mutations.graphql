@@ -10,6 +10,7 @@ mutation CreateRestaurant(
     city
     createdAt
     updatedAt
+    owner
   }
 }
 mutation UpdateRestaurant(
@@ -23,6 +24,7 @@ mutation UpdateRestaurant(
     city
     createdAt
     updatedAt
+    owner
   }
 }
 mutation DeleteRestaurant(
@@ -36,5 +38,6 @@ mutation DeleteRestaurant(
     city
     createdAt
     updatedAt
+    owner
   }
 }
