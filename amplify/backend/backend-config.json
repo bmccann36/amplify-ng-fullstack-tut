@@ -42,5 +42,21 @@
         ]
       }
     }
+  },
+  "function": {
+    "xwordGqlBackend": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "api",
+          "resourceName": "xwordweb",
+          "attributes": [
+            "GraphQLAPIIdOutput"
+          ]
+        }
+      ]
+    }
   }
 }

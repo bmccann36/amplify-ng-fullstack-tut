@@ -1,4 +1,26 @@
 # this is an auto generated file. This will be overwritten
+query Me {
+  me {
+    Username
+    UserAttributes {
+      Name
+      Value
+    }
+    UserCreateDate
+    UserLastModifiedDate
+    Enabled
+    UserStatus
+    MFAOptions {
+      DeliveryMedium
+      AttributeName
+    }
+    PreferredMfaSetting
+    UserMFASettingList
+  }
+}
+query Echo($msg: String) {
+  echo(msg: $msg)
+}
 query GetRestaurant($id: ID!) {
   getRestaurant(id: $id) {
     id

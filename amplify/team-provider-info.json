@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "xwordwebfae818eb": {}
+      },
+      "function": {
+        "xwordGqlBackend": {
+          "deploymentBucketName": "amplify-xwordweb-dev-64721-deployment",
+          "s3Key": "amplify-builds/xwordGqlBackend-323773796d34732b7931-build.zip"
+        }
       }
     }
   }
