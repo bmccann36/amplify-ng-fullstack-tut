@@ -7,9 +7,15 @@ import { AppComponent } from './app.component';
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 /* new form imports */
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AmplifystartComponent } from './amplifystart/amplifystart.component';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AmplifystartComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +24,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AmplifyUIAngularModule,
     /* configuring form modules */
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    CollapseModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
