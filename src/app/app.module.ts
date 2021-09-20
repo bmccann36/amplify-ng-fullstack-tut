@@ -10,12 +10,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AmplifystartComponent } from './amplifystart/amplifystart.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { GridDemoComponent } from './grid-demo/grid-demo.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AmplifystartComponent
+    AmplifystartComponent,
+    GridDemoComponent,
+    StepperComponent
   ],
   imports: [
     BrowserModule,
