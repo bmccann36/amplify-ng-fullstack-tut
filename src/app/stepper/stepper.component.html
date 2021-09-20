@@ -1,7 +1,75 @@
-<div class="container my-container" id="pair-device-wrapper">
-  <div class="row my-row justify-content-center">
-    <div class="col-lg-8 my-col">
+<div class="container" id="Bootstrap4Wizard">
 
+  <h3>Link your remarkable</h3>
+
+  <hr>
+  <div class="card">
+    <div class="card-header">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <ul class="nav nav-pills">
+            <li><a class="{{currentStep == 1 ? 'active' : 'inactive' }}" href="#step1" data-toggle="tab"
+                data-step="1">Step 1</a></li>
+            <li><a class="{{currentStep == 2 ? 'active' : 'inactive' }}" href="#step2" data-toggle="tab"
+                data-step="2">Step2</a></li>
+            <li><a class="{{currentStep == 3 ? 'active' : 'inactive' }}" href="#step3" data-toggle="tab"
+                data-step="3">Step 3</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> <!-- end card for navbar-->
+
+    <div class="card-body">
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
+          aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" style="width: 20%;">
+          Step 1 of 5
+        </div>
+      </div>
+
+      <div class="tab-content">
+        <!-- step 1-->
+        <div [ngClass]=stepOneState id="step1">
+          <br>
+          <label>enter one time code</label>
+          <input class="form-control input-lg">
+          <button type="button" class="btn  btn-default nextTab" (click)="advanceButtonClicked()">Next</button>
+        </div>
+
+        <!-- step 2 -->
+        <div [ngClass]=stepTwoState id="step2">
+          <h2>I AM STEP 2</h2>
+          <!-- <div class="card">
+            <div class="card-body">
+              this is step 2
+            </div>
+          </div>
+          <br>
+          <label>Enter Response</label>
+          <input class="form-control  input-lg">
+          <a class="btn btn-default prevTab" href="#">Previous</a>
+          <a class="btn btn-default nextTab" href="#">Continue</a> -->
+        </div>
+
+        <div class="tab-pane fade" id="step3">
+          <div class="">
+            <h2>Step 3</h2> Add another step here..
+          </div>
+          <a class="btn btn-default prevTab" href="#">Previous</a>
+          <a class="btn btn-default nextTab" href="#">Continue</a>
+        </div>
+
+        <div class="tab-pane fade" id="step4">
+          <div class="">
+            <h2>Step 4</h2> Add another almost done step here..
+          </div>
+          <a class="btn btn-default prevTab" href="#">Previous</a>
+          <a class="btn btn-default nextTab" href="#">Continue</a>
+        </div>
+
+      </div>
+      <div class="card-footer text-muted">
+        footer goes here
+      </div>
     </div>
   </div>
-</div>

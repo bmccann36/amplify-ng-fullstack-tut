@@ -1,16 +1,30 @@
-body {
-  margin: 30px;
+h3{
+  margin:40px 0px;
 }
-.my-container {
-  border: 1px solid green;
+.nav-pills {
+    margin-top:15px;
 }
-.my-row {
-  height: 300px;
-  border: 3px solid red;
+
+.nav-pills > li > a {
+    padding:5px 30px;
+    border-bottom:2px solid #17a2b8;
+    color:#17a2b8 !important;
+    text-decoration:none;
 }
-.my-col {
-  border: 3px dotted blue;
+.nav-pills > li > a.active {
+    color:#007bff !important;
+    border-bottom:3px solid #007bff;
 }
-#pair-device-wrapper {
-  padding: 2em;
+.progress {
+    width:30%;
+    height:20px;
+    background-color:#333;
+    margin:20px 0px;
+}
+.card-header, .navbar-inner {
+    margin:0px !important;
+    padding:0px !important;
+}
+.navbar {
+   padding:5px 0px !important;
 }
