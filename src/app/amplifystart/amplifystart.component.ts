@@ -6,7 +6,7 @@ import { APIService } from '../API.service';
 @Component({
   selector: 'app-root',
   templateUrl: './amplifystart.component.html',
-  styleUrls: ['./amplifystart.component.css']
+  styleUrls: ['./amplifystart.component.scss']
 })
 export class AmplifystartComponent implements OnInit {
   title = 'amplify-angular-app';
