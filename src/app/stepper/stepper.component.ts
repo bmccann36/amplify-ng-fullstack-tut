@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-stepper',
@@ -7,35 +7,29 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./stepper.component.scss']
 })
 export class StepperComponent implements OnInit {
-  currentStep = 1
-  stepOneState = 'tab-pane active';
-  stepTwoState = 'tab-pane fade'
+  isPairing = false;
+  pairingCompleted = false;
+  otCode = new FormControl('',
+    [Validators.required, Validators.minLength(8), Validators.maxLength(8)]
+  );
   ngOnInit() {
 
   }
 
-  // advanceStep(stepToGoTo: number) {
-  //   console.log("advance called with ", stepToGoTo);
-  //   this.currentStep = stepToGoTo;
-  // }
-  shouldShowStep(stepNo: number) {
-    return this.currentStep == stepNo;
+  async onRegisterClicked() {
+    console.log('the form input is: ', this.otCode.value);
+    this.isPairing = true;
+    await this.sleep(2000);
+    console.log('done sleeping');
+    this.isPairing = false;
+    // this.pairingCompleted = true;
+
   }
-  advanceButtonClicked() {
-    this.currentStep++;
-    console.log('currentStep :>> ', this.currentStep);
-    this.stepOneState = 'tab-pane fade';
-    this.stepTwoState = 'tab-pane active'
+
+
+  sleep(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
-  // stepOneState(){
-  //   return ['tab-pane', 'active']
-  // }
-  // stepTwoState(){
-  //   console.log('step two state called');
-  //   if(this.currentStep == 2){
-  //     return ['tab-pane', 'active']
-  //   }else{
-  //     return 'tab-pane'
-  //   }
-  // }
+
+
 }
