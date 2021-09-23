@@ -1,38 +1,42 @@
-<div class="container-fluid" id="wizard-container">
-    <div class="row pt-5 justify-content-center" id="step-display-row">
-        <div class="col-xl-5 col-md-8" id="step-display-col">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Link Your Remarkable</h5>
-                    <p class="card-text">
-                        Go to
-                        <a href="https://my.remarkable.com/device/desktop">https://my.remarkable.com/device/desktop</a>
-                        <br /> to get a one time code to pair your device, then enter it into the form below.
-                    </p>
-                    <div class="row justify-content-center">
-
-                        <div *ngIf="!isPairing && !pairingCompleted" class="col-xl-7 col-md-5 col-sm-8">
-                            <div class="form-group text-monospace m-3">
-                                <input [formControl]="otCode" class="form-control" id="oneTimeCodeInput" placeholder="8-digit-code" />
-                            </div>
-                            <p>Form Status: {{ otCode.status }}</p>
-                            <button class="btn btn-primary" [disabled]="otCode.status == 'INVALID'" type="submit" (click)="onRegisterClicked()"> Register</button>
-                        </div>
-
-                        <div *ngIf="isPairing" class="col">
-                            <div class="spinner-border m-4 p-3" role="status ">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                            <p class="text-muted">
-                                pairing device and creating a crosswords folder...
-                            </p>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
+<div class="container" id="wizard-container">
+  <div class="row pt-2 align-items-center justify-content-center" id="step-display-row">
+    <div class="col-xl-6 col-md-8 text-center" id="step-display-col">
+      <h5 class="card-title">Link Your Remarkable</h5>
+      <p *ngIf="!pairingCompleted" class="card-text">
+        Go to
+        <a href="https://my.remarkable.com/device/desktop">https://my.remarkable.com/device/desktop</a>
+        <br /> to get a one time code to pair your device, then enter it into the form below.
+      </p>
+      <div class="row justify-content-center align-items-center h-75" id="inner-row">
+        <div *ngIf="!isPairing && !pairingCompleted" class="col-xl-7 col-md-6 col-sm-8">
+          <div class="form-group text-monospace m-3">
+            <input [formControl]="otCode" class="form-control" id="oneTimeCodeInput" placeholder="8-digit-code" />
+          </div>
+          <!--? for debugging-->
+          <!-- <p>Form Status: {{ otCode.status }}</p> -->
+          <button class="btn btn-primary" [disabled]="otCode.status == 'INVALID'" type="submit"
+            (click)="onRegisterClicked()"> Register</button>
         </div>
+
+        <div *ngIf="isPairing" class="col">
+          <div class="spinner-border m-4 p-3" role="status ">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <p class="text-muted">
+            pairing device and creating a crosswords folder...
+          </p>
+        </div>
+
+        <div *ngIf="!isPairing && pairingCompleted" class="col" id="inner-col-succ">
+          <div class="alert alert-success" role="alert">
+            Your Remarkable has been paired successfully!
+            New puzzles will be delivered to a folder called
+            remarkable-crossword as they become available.
+          </div>
+        </div>
+
+      </div>
     </div>
+  </div>
 </div>
 <!--end container-->

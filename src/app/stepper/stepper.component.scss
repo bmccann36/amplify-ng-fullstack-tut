@@ -1,17 +1,23 @@
-
-
-
-
 input {
   text-align: center;
   letter-spacing: 0.2em;
 }
 
 #step-display-col {
-  /* border: 2px solid green; */
+  // border: 2px solid green;
+  // height: 320px;
 }
 #step-display-row {
   margin-top: 3%;
-  /* border: 2px dotted orange; */
-  /* padding: 10px; */
+  // border: 2px dotted orange;
+  // height: 350px;
+}
+.card-body{
+  // border: 2px dotted purple;
+}
+#inner-row{
+  // border: 2px dotted orange;
+}
+#inner-col-succ {
+  // border: 2px solid red;
 }

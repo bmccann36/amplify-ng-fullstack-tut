@@ -22,7 +22,7 @@ export class StepperComponent implements OnInit {
     await this.sleep(2000);
     console.log('done sleeping');
     this.isPairing = false;
-    // this.pairingCompleted = true;
+    this.pairingCompleted = true;
 
   }
 
