@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AmplifystartComponent } from './amplifystart/amplifystart.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { GridDemoComponent } from './grid-demo/grid-demo.component';
-import { StepperComponent } from './stepper/stepper.component';
+import { PairDeviceComponent } from './pair-device/pairDevice.component';
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { StepperComponent } from './stepper/stepper.component';
     AppComponent,
     AmplifystartComponent,
     GridDemoComponent,
-    StepperComponent
+    PairDeviceComponent
   ],
   imports: [
     BrowserModule,
