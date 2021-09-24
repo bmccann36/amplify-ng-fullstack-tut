@@ -50,13 +50,6 @@
       "service": "Lambda",
       "dependsOn": [
         {
-          "category": "auth",
-          "resourceName": "xwordwebfae818eb",
-          "attributes": [
-            "UserPoolId"
-          ]
-        },
-        {
           "category": "api",
           "resourceName": "xwordweb",
           "attributes": [

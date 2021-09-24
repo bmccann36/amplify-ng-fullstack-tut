@@ -1,13 +1,5 @@
 {
   "permissions": {
-    "auth": {
-      "xwordwebfae818eb": [
-        "create",
-        "read",
-        "update",
-        "delete"
-      ]
-    },
     "storage": {
       "Restaurant:@model(appsync)": [
         "create",

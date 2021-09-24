@@ -2,7 +2,6 @@
 	API_XWORDWEB_GRAPHQLAPIIDOUTPUT
 	API_XWORDWEB_RESTAURANTTABLE_ARN
 	API_XWORDWEB_RESTAURANTTABLE_NAME
-	AUTH_XWORDWEBFAE818EB_USERPOOLID
 	ENV
 	REGION
 Amplify Params - DO NOT EDIT */
@@ -17,7 +16,7 @@ const cognitoIdentityServiceProvider = new CognitoIdentityServiceProvider();
 // if (!COGNITO_USERPOOL_ID) {
 //   throw new Error(`Function requires environment variable: 'COGNITO_USERPOOL_ID'`);
 // }
-const COGNITO_USERPOOL_ID = 'us-east-1_Gh3mM7050';
+const COGNITO_USERPOOL_ID =  'us-east-1_Gh3mM7050';
 const COGNITO_USERNAME_CLAIM_KEY = 'cognito:username';
 
 /**
@@ -30,13 +29,15 @@ const resolvers = {
     },
     me: async ctx => {
       console.log(JSON.stringify(ctx));
-      return {
-        Username: "hi",
-        UserLastModifiedDate: "hi",
-        Enabled: "hi",
-        UserStatus: "hi",
-        PreferredMfaSetting: "hi",
-        UserMFASettingList: "hi",
+      var params = {
+        UserPoolId: COGNITO_USERPOOL_ID, /* required */
+        Username: ctx.identity.claims[COGNITO_USERNAME_CLAIM_KEY], /* required */
+      };
+      try {
+        // Read more: https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CognitoIdentityServiceProvider.html#adminGetUser-property
+        return await cognitoIdentityServiceProvider.adminGetUser(params).promise();
+      } catch (e) {
+        throw new Error(`NOT FOUND`);
       }
     }
   },
