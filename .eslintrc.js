@@ -34,5 +34,6 @@ module.exports = {
       'always'
     ],
     'quote-props': ['warn', 'as-needed'],
+    'no-unused-vars': ['warn', 1]
   }
 };

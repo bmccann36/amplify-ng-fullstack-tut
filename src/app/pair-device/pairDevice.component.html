@@ -12,8 +12,6 @@
           <div class="form-group text-monospace m-3">
             <input [formControl]="otCode" class="form-control" id="oneTimeCodeInput" placeholder="8-digit-code" />
           </div>
-          <!--? for debugging-->
-          <!-- <p>Form Status: {{ otCode.status }}</p> -->
           <button class="btn btn-primary" [disabled]="otCode.status == 'INVALID'" type="submit"
             (click)="onRegisterClicked()"> Register</button>
         </div>
@@ -39,4 +37,4 @@
     </div>
   </div>
 </div>
-<!--end container-->
+

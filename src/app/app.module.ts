@@ -12,6 +12,7 @@ import { AmplifystartComponent } from './amplifystart/amplifystart.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { GridDemoComponent } from './grid-demo/grid-demo.component';
 import { PairDeviceComponent } from './pair-device/pairDevice.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PairDeviceComponent } from './pair-device/pairDevice.component';
     AppComponent,
     AmplifystartComponent,
     GridDemoComponent,
-    PairDeviceComponent
+    PairDeviceComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

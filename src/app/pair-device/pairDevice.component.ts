@@ -26,10 +26,7 @@ export class PairDeviceComponent implements OnInit {
 
   }
 
-
   sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
-
-
 }
