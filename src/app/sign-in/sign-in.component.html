@@ -1,6 +1,6 @@
 <div class="row align-items-center justify-content-center pt-5" >
   <div class="col-xl-3 col-md-4 col-sm-7 m-4">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="openModal()">
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input formControlName="email" type="email" class="form-control" placeholder="Enter email">

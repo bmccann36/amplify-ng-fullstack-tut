@@ -1,31 +1,12 @@
 {
-  "api": {
-    "xwordweb": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authxwordwebfae818eb"
-            }
-          },
-          "additionalAuthenticationProviders": []
-        }
-      }
-    }
-  },
   "auth": {
-    "xwordwebfae818eb": {
+    "xwordamplifywebc2866cea": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
-        "loginMechanisms": [
-          "EMAIL"
-        ],
+        "loginMechanisms": [],
         "signupAttributes": [
           "EMAIL"
         ],
@@ -41,22 +22,6 @@
           "EMAIL"
         ]
       }
-    }
-  },
-  "function": {
-    "xwordGqlBackend": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": [
-        {
-          "category": "api",
-          "resourceName": "xwordweb",
-          "attributes": [
-            "GraphQLAPIIdOutput"
-          ]
-        }
-      ]
     }
   }
 }

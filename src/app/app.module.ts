@@ -13,6 +13,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { GridDemoComponent } from './grid-demo/grid-demo.component';
 import { PairDeviceComponent } from './pair-device/pairDevice.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { ConfirmSingupModalComponent } from './confirm-singup-modal/confirm-singup-modal.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     AmplifystartComponent,
     GridDemoComponent,
     PairDeviceComponent,
-    SignInComponent
+    SignInComponent,
+    ConfirmSingupModalComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     CollapseModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

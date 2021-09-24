@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "xwordwebfae818eb_identitypool_fae818eb",
+    "identityPoolName": "xwordamplifywebc2866cea_identitypool_c2866cea",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "xwordwfae818eb",
-    "userPoolName": "xwordwebfae818eb_userpool_fae818eb",
+    "resourceNameTruncated": "xwordac2866cea",
+    "userPoolName": "xwordamplifywebc2866cea_userpool_c2866cea",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -20,9 +20,7 @@
     "requiredAttributes": [
         "email"
     ],
-    "aliasAttributes": [
-        "email"
-    ],
+    "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
@@ -31,10 +29,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "xwordwfae818eb_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "xwordac2866cea_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "fae818eb",
-    "resourceName": "xwordwebfae818eb",
+    "sharedId": "c2866cea",
+    "resourceName": "xwordamplifywebc2866cea",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -49,6 +47,9 @@
         ]
     },
     "useDefault": "default",
+    "usernameAttributes": [
+        "email"
+    ],
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,

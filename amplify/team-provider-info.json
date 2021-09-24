@@ -1,25 +1,19 @@
 {
-  "dev": {
+  "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-xwordweb-dev-64721-authRole",
-      "UnauthRoleArn": "arn:aws:iam::466357709346:role/amplify-xwordweb-dev-64721-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::466357709346:role/amplify-xwordweb-dev-64721-authRole",
+      "AuthRoleName": "amplify-xwordamplifyweb-staging-30151-authRole",
+      "UnauthRoleArn": "arn:aws:iam::466357709346:role/amplify-xwordamplifyweb-staging-30151-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::466357709346:role/amplify-xwordamplifyweb-staging-30151-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-xwordweb-dev-64721-deployment",
-      "UnauthRoleName": "amplify-xwordweb-dev-64721-unauthRole",
-      "StackName": "amplify-xwordweb-dev-64721",
-      "StackId": "arn:aws:cloudformation:us-east-1:466357709346:stack/amplify-xwordweb-dev-64721/a3a38200-17a4-11ec-b33b-0ec9023d0675",
-      "AmplifyAppId": "d34eef07f7kswi"
+      "DeploymentBucketName": "amplify-xwordamplifyweb-staging-30151-deployment",
+      "UnauthRoleName": "amplify-xwordamplifyweb-staging-30151-unauthRole",
+      "StackName": "amplify-xwordamplifyweb-staging-30151",
+      "StackId": "arn:aws:cloudformation:us-east-1:466357709346:stack/amplify-xwordamplifyweb-staging-30151/c476d9c0-1ce3-11ec-86d8-0e8a3c442c39",
+      "AmplifyAppId": "d3e14skn26x2vt"
     },
     "categories": {
       "auth": {
-        "xwordwebfae818eb": {}
-      },
-      "function": {
-        "xwordGqlBackend": {
-          "deploymentBucketName": "amplify-xwordweb-dev-64721-deployment",
-          "s3Key": "amplify-builds/xwordGqlBackend-323773796d34732b7931-build.zip"
-        }
+        "xwordamplifywebc2866cea": {}
       }
     }
   }
