@@ -1,12 +1,21 @@
 <div class="modal-header">
-  <h4 class="modal-title pull-left"> TITLE HERE</h4>
-  <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
-    <span aria-hidden="true" class="visually-hidden">&times;</span>
-  </button>
+  <h4 class="modal-title pull-left"> complete sign up</h4>
 </div>
 <div class="modal-body">
-  BODY HERE
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">some-button</button>
+  <p>please confirm sign up by entering the code that was emailed to you</p>
+  <form [formGroup]="confirmForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Email address</label>
+      <input formControlName="email" type="email" class="form-control" placeholder="Enter email">
+      <small class="form-text text-muted"> use the email address you used to sing up</small>
+    </div>
+    <div class="form-group">
+      <label>Confirmation code</label>
+      <input formControlName="confirmationCode" type="text" class="form-control" placeholder="Enter conifrmation code">
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <!-- <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">some-button</button> -->
+    </div>
+  </form>
 </div>

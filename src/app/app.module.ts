@@ -12,9 +12,10 @@ import { AmplifystartComponent } from './amplifystart/amplifystart.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { GridDemoComponent } from './grid-demo/grid-demo.component';
 import { PairDeviceComponent } from './pair-device/pairDevice.component';
-import { SignInComponent } from './sign-in/sign-in.component';
 import { ConfirmSingupModalComponent } from './confirm-singup-modal/confirm-singup-modal.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { LoginModalComponent } from './login-modal/login-modal.component';
 
 
 @NgModule({
@@ -23,8 +24,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AmplifystartComponent,
     GridDemoComponent,
     PairDeviceComponent,
-    SignInComponent,
-    ConfirmSingupModalComponent
+    ConfirmSingupModalComponent,
+    LoginModalComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     CollapseModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

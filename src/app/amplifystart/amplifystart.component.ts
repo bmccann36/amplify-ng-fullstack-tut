@@ -21,25 +21,7 @@ export class AmplifystartComponent implements OnInit {
       'description': ['', Validators.required],
       'city': ['', Validators.required]
     });
-    this.api.ListRestaurants().then(event => {
-      this.restaurants = <Array<Restaurant>>event.items;
-    });
 
-    /* subscribe to new restaurants being created */
-//? had to hard code to listen on only events created by me
-    this.api.OnCreateRestaurantListener("bmccann").subscribe((event: any) => {
-      const newRestaurant = event.value.data.onCreateRestaurant;
-      this.restaurants = [newRestaurant, ...this.restaurants];
-    });
   }
 
-  public onCreate(restaurant: Restaurant) {
-    this.api.CreateRestaurant(restaurant).then(event => {
-      console.log('item created!');
-      this.createForm.reset();
-    })
-      .catch(e => {
-        console.log('error creating restaurant...', e);
-      });
-  }
 }
