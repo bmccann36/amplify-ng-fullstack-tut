@@ -7,7 +7,7 @@ import { PairDeviceComponent } from './pair-device/pairDevice.component';
 
 const routes: Routes = [
   { path: 'amplifystart', component: AmplifystartComponent },
-  { path: 'app-stepper', component: PairDeviceComponent}
+  { path: 'app-stepper', component: PairDeviceComponent },
 ];
 
 @NgModule({

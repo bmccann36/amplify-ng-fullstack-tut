@@ -16,6 +16,7 @@ import { ConfirmSingupModalComponent } from './confirm-singup-modal/confirm-sing
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { LoginModalComponent } from './login-modal/login-modal.component';
+import { SignupModalComponent } from './signup-modal/signup-modal.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
     GridDemoComponent,
     PairDeviceComponent,
     ConfirmSingupModalComponent,
-    LoginModalComponent
+    LoginModalComponent,
+    SignupModalComponent,
   ],
   imports: [
     BrowserModule,
