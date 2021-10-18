@@ -15,7 +15,7 @@
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
     <!--! error messages -->
-    <div  class="alert alert-danger" role="alert">
+    <div *ngIf="loginErrorCode == 'UserNotFoundException'" class="alert alert-danger" role="alert">
       no user exists for that email would you like to
       <a id="signUpLink" class="alert-link" (click)="launchSignUpComp()">
         sign up</a>?
