@@ -8,23 +8,21 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./signup-modal.component.scss']
 })
 export class SignupModalComponent implements OnInit {
-
   constructor(
     private formBuilder: FormBuilder,
     public bsModalRef: BsModalRef,
   ) { }
+
   signUpForm = this.formBuilder.group({
     email: '',
     password: ''
   });
 
-  async onSubmit() {
-    const { email, password } = this.signUpForm.value;
-    console.error(email, password);
+  ngOnInit(): void {
   }
 
+  async onSubmit(){
 
-  ngOnInit(): void {
   }
 
 }

@@ -41,7 +41,7 @@ export class LoginModalComponent implements OnInit {
   }
 
   launchSignUpComp(){
-    this.bsModalRef.hide();
+    this.bsModalRef.hide()
     this.userWantsSignUp.emit()
   }
 
