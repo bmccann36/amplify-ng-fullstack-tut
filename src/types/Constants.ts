@@ -5,3 +5,8 @@ export enum UserState {
   NOT_SIGNED_UP = 'NOT_SIGNED_UP',
   SIGNED_UP_NOT_CONFIRMED = 'SIGNED_UP_NOT_CONFIRMED'
 }
+
+export enum PairingState {
+  NOT_PAIRED = 'NOT_PAIRED',
+  PAIRED = 'PAIRED',
+}

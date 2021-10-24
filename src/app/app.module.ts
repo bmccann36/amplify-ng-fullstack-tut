@@ -17,6 +17,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { SignupModalComponent } from './signup-modal/signup-modal.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { SignupModalComponent } from './signup-modal/signup-modal.component';
     ConfirmSingupModalComponent,
     LoginModalComponent,
     SignupModalComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
