@@ -1,0 +1,5 @@
+{
+    "tableName": "rmXwordTable",
+    "partitionKeyName": "cognitoSub",
+    "partitionKeyType": "S"
+}

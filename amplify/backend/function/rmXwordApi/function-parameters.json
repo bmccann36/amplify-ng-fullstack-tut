@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "auth": {
+      "xwordamplifywebc2866cea": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "storage": {
+      "rmXwordDb": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "myEnvVar",
+      "environmentVariableName": "MY_ENV_VAR"
+    }
+  ]
+}

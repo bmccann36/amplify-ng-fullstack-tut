@@ -14,6 +14,13 @@
     "categories": {
       "auth": {
         "xwordamplifywebc2866cea": {}
+      },
+      "function": {
+        "rmXwordApi": {
+          "myEnvVar": "some-val",
+          "deploymentBucketName": "amplify-xwordamplifyweb-staging-30151-deployment",
+          "s3Key": "amplify-builds/rmXwordApi-6c687553613566735a50-build.zip"
+        }
       }
     }
   }
