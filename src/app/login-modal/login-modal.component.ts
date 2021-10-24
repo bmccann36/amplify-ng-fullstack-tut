@@ -35,11 +35,13 @@ export class LoginModalComponent implements OnInit {
       this.userLoggedInEvent.emit(UserState.LOGGED_IN)
       this.bsModalRef.hide();
     } catch (error : any) { // TODO handle ALL ERRORS and alert user
+      console.error(error);
       this.loginErrorCode = error.code;
     }
   }
 
   launchSignUpComp(){
+    this.bsModalRef.hide();
     this.userWantsSignUp.emit()
   }
 
