@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { API } from 'aws-amplify';
 import { Restaurant } from 'src/types/Restaurant';
 import { APIService } from '../API.service';
 
@@ -9,18 +10,21 @@ import { APIService } from '../API.service';
   styleUrls: ['./amplifystart.component.scss']
 })
 export class AmplifystartComponent implements OnInit {
-  title = 'amplify-angular-app';
-  public createForm!: FormGroup;
-  restaurants!: Array<Restaurant>;
 
-  constructor(private api: APIService, private fb: FormBuilder) { }
+
+  constructor() { }
 
   async ngOnInit() {
-    this.createForm = this.fb.group({
-      'name': ['', Validators.required],
-      'description': ['', Validators.required],
-      'city': ['', Validators.required]
-    });
+
+  }
+
+  async callApi() {
+    console.log('calling api');
+
+
+    // return API.get(apiName, path, myInit);
+    const apiRes = await API.post('rmXwordApi', '/pair-device', null)
+    console.log('apiRes', apiRes);
 
   }
 

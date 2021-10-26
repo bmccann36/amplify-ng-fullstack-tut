@@ -7,10 +7,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "outDir": "./src",
-    "baseUrl": "./",
+    "baseUrl": "./src/node_modules",
     "rootDir": "./lib",
-    "paths": {
-      "src": ["./lib"]
-    }
   }
 }
