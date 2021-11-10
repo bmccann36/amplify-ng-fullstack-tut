@@ -17,9 +17,13 @@
       },
       "function": {
         "rmXwordApi": {
-          "myEnvVar": "some-val",
           "deploymentBucketName": "amplify-xwordamplifyweb-staging-30151-deployment",
-          "s3Key": "amplify-builds/rmXwordApi-653734455974336e4b6d-build.zip"
+          "s3Key": "amplify-builds/rmXwordApi-4d3233636765742f7074-build.zip",
+          "myEnvVar": "some-val"
+        },
+        "S3Triggerc16dbe0c": {
+          "deploymentBucketName": "amplify-xwordamplifyweb-staging-30151-deployment",
+          "s3Key": "amplify-builds/S3Triggerc16dbe0c-4649786a767a68696865-build.zip"
         }
       }
     }

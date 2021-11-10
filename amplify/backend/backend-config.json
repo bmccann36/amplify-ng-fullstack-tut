@@ -28,6 +28,21 @@
     "rmXwordDb": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
+    },
+    "puzzleBucket": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "S3Triggerc16dbe0c",
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ]
+        }
+      ]
     }
   },
   "function": {
@@ -51,8 +66,20 @@
             "Arn",
             "StreamArn"
           ]
+        },
+        {
+          "category": "storage",
+          "resourceName": "puzzleBucket",
+          "attributes": [
+            "BucketName"
+          ]
         }
       ]
+    },
+    "S3Triggerc16dbe0c": {
+      "service": "Lambda",
+      "providerPlugin": "awscloudformation",
+      "build": true
     }
   },
   "api": {

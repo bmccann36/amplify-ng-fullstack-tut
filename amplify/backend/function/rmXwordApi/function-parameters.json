@@ -2,10 +2,7 @@
   "permissions": {
     "auth": {
       "xwordamplifywebc2866cea": [
-        "create",
-        "read",
-        "update",
-        "delete"
+        "read"
       ]
     },
     "storage": {
@@ -14,6 +11,9 @@
         "read",
         "update",
         "delete"
+      ],
+      "puzzleBucket": [
+        "read"
       ]
     }
   },
