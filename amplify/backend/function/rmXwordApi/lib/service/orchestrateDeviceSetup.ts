@@ -17,7 +17,7 @@ export default async (code: string, cognitoSub: string) => {
   const params = {
     TableName: process.env.STORAGE_RMXWORDDB_NAME,
     Item: {
-      cognitoSub: 'someCognitoSub123', // todo replace
+      cognitoSub: cognitoSub,
       deviceToken: generatedToken
     }
   };

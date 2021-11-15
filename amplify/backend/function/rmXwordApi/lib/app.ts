@@ -39,8 +39,15 @@ app.use(function (req, res, next) {
 // pair device path
 app.post('/pair-device', async function (req, res, next) {
   console.log('exec /pair-device with code: ', req.body.oneTimeCode);
+  const cognitoStr =
+    req.apiGateway.event.requestContext.identity.cognitoAuthenticationProvider;
+  console.log("authorizer INFO ****");
+  const cognitoSub = cognitoStr.split(':')[2];
+  // res.json({ "ooga": "booga" })
   try {
-    await orchestrateDeviceSetup(req.body.oneTimeCode, null) // TODO patch in cognito user id
+    await orchestrateDeviceSetup(req.body.oneTimeCode, cognitoSub) //    patch in cognito user id
+
+
     res.json({
       statusMessage: 'successfully paired device and created directory with sample file',
     })
