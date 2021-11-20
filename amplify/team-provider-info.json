@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-xwordamplifyweb-staging-30151-unauthRole",
       "StackName": "amplify-xwordamplifyweb-staging-30151",
       "StackId": "arn:aws:cloudformation:us-east-1:466357709346:stack/amplify-xwordamplifyweb-staging-30151/c476d9c0-1ce3-11ec-86d8-0e8a3c442c39",
-      "AmplifyAppId": "d3e14skn26x2vt"
+      "AmplifyAppId": "d3e14skn26x2vt",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-xwordamplifyweb-staging-30151-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
@@ -18,7 +19,7 @@
       "function": {
         "rmXwordApi": {
           "deploymentBucketName": "amplify-xwordamplifyweb-staging-30151-deployment",
-          "s3Key": "amplify-builds/rmXwordApi-4c414a694b764c6a7250-build.zip",
+          "s3Key": "amplify-builds/rmXwordApi-6d766a38383667645841-build.zip",
           "myEnvVar": "some-val"
         },
         "S3Triggerc16dbe0c": {

@@ -1,42 +1,54 @@
 {
-  "paths": [
-    {
-      "name": "/pair-device",
-      "lambdaFunction": "rmXwordApi",
-      "privacy": {
-        "private": true,
-        "auth": [
-          "/POST",
-          "/GET",
-          "/PUT",
-          "/PATCH",
-          "/DELETE"
-        ]
-      },
-      "policyResourceName": "/pair-device"
-    }
-  ],
-  "resourceName": "rmXwordApi",
-  "apiName": "rmXwordApi",
-  "functionArns": [
-    {
-      "lambdaFunction": "rmXwordApi"
-    }
-  ],
-  "privacy": {
-    "auth": 1,
-    "unauth": 0,
-    "authRoleName": "amplify-xwordamplifyweb-staging-30151-authRole",
-    "unAuthRoleName": "amplify-xwordamplifyweb-staging-30151-unauthRole"
-  },
-  "dependsOn": [
-    {
-      "category": "function",
-      "resourceName": "rmXwordApi",
-      "attributes": [
-        "Name",
-        "Arn"
-      ]
-    }
-  ]
+    "paths": [
+        {
+            "name": "/pair-device",
+            "lambdaFunction": "rmXwordApi",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/pair-device"
+        },
+        {
+            "name": "/user-info",
+            "lambdaFunction": "rmXwordApi",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/user-info"
+        }
+    ],
+    "resourceName": "rmXwordApi",
+    "apiName": "rmXwordApi",
+    "functionArns": [
+        {
+            "lambdaFunction": "rmXwordApi"
+        }
+    ],
+    "privacy": {
+        "auth": 2,
+        "unauth": 0,
+        "authRoleName": "amplify-xwordamplifyweb-staging-30151-authRole",
+        "unAuthRoleName": "amplify-xwordamplifyweb-staging-30151-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "rmXwordApi",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "ab564e55"
 }

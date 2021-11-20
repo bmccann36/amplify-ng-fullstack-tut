@@ -53,6 +53,21 @@ app.post('/pair-device', async function (req, res, next) {
   }
 });
 
+// get user info path
+app.get('/user-info', async function (req, res, next) {
+  console.log('exec /user-info');
+  try {
+    const cognitoStr =
+      req.apiGateway.event.requestContext.identity.cognitoAuthenticationProvider;
+    const cognitoSub = cognitoStr.split(':')[2];
+    console.log('cognitoSub :>> ', cognitoSub);
+    res.send('ur done')
+  } catch (err) {
+    next(err)
+  }
+
+})
+
 // error handling
 app.use(function (err, req, res, next) {
   console.error(err.stack)
