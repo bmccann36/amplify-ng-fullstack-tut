@@ -1,3 +1,4 @@
+import { FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { API } from 'aws-amplify';
 
@@ -8,20 +9,29 @@ import { API } from 'aws-amplify';
 })
 export class AmplifystartComponent implements OnInit {
 
+  pairDeviceForm = this.formBuilder.group({
+    oneTimeCode: '',
+  });
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   async ngOnInit() {
 
   }
 
-  async callApi() {
+  async onSubmit(): Promise<void> {
+    // Process checkout data here
+    const oneTimeCode = this.pairDeviceForm.value.oneTimeCode;
     console.log('calling api');
-
-
-    const apiRes = await API.post('rmXwordApi', '/pair-device', null)
+    const postInput = {
+      body: {
+        oneTimeCode: oneTimeCode
+      },
+    };
+    const apiRes = await API.post('rmXwordApi', '/pair-device', postInput)
     console.log('apiRes', apiRes);
-
   }
+
+
 
 }

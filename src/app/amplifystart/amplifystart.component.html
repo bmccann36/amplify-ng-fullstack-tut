@@ -1,3 +1,16 @@
-<div >
-  <button type="submit" class="btn btn-primary" (click)="callApi()">Submit</button>
+<div class="row pt-5 align-items-center justify-content-center">
+
+  <form [formGroup]="pairDeviceForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label for="one time code">
+        One Time Code
+      </label>
+      <input id="oneTimeCode" type="text" formControlName="oneTimeCode">
+    </div>
+
+    <button class="button" type="submit">Pair Now</button>
+
+  </form>
+
 </div>

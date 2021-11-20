@@ -4,11 +4,12 @@
       <h5 class="card-title">Link Your Remarkable</h5>
       <p *ngIf="!pairingCompleted" class="card-text">
         Go to
-        <a href="https://my.remarkable.com/device/desktop">https://my.remarkable.com/device/desktop</a>
+        <a href="https://my.remarkable.com/device/desktop/connect" target="_blank" rel="noopener noreferrer">https://my.remarkable.com/device/desktop/connect</a>
         <br /> to get a one time code to pair your device, then enter it into the form below.
+
       </p>
       <div class="row justify-content-center align-items-center h-75" id="inner-row">
-        <div *ngIf="!isPairing && !pairingCompleted" class="col-xl-7 col-md-6 col-sm-8">
+        <div *ngIf="!isPairing && !pairingCompleted && !pairingError" class="col-xl-7 col-md-6 col-sm-8">
           <div class="form-group text-monospace m-3">
             <input [formControl]="otCode" class="form-control" id="oneTimeCodeInput" placeholder="8-digit-code" />
           </div>
@@ -21,7 +22,8 @@
             <span class="sr-only">Loading...</span>
           </div>
           <p class="text-muted">
-            pairing device and creating a crosswords folder...
+            pairing your reMarkable account <br />
+            this takes a few seconds
           </p>
         </div>
 
@@ -30,6 +32,15 @@
             Your Remarkable has been paired successfully!
             New puzzles will be delivered to a folder called
             remarkable-crossword as they become available.
+          </div>
+        </div>
+
+        <div *ngIf="!isPairing && pairingError" class="col" id="inner-col-succ">
+          <div class="alert alert-warning text-left" role="alert">
+            Unable to pair the app with your reMarkable account <br>
+            <b>Potential fixes: </b><br>
+            - make sure you don't already have a folder called "Remarkable Crossword" <br>
+            - make sure your one time code is not expired
           </div>
         </div>
 
