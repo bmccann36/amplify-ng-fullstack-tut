@@ -18,7 +18,8 @@ export default async (code: string, cognitoSub: string) => {
     TableName: process.env.STORAGE_RMXWORDDB_NAME,
     Item: {
       cognitoSub: cognitoSub,
-      deviceToken: generatedToken
+      deviceToken: generatedToken,
+      createdAt: new Date().toISOString()
     }
   };
   const dynamoRes = await docClient.put(params).promise();

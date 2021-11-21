@@ -18,6 +18,7 @@ if (!process.env.LAMBDA_RUNTIME_DIR) {
   console.log('cloud env detected so not loading .env file');
 }
 
+import fetchUserInfo from "./service/fetchUserInfo";
 import orchestrateDeviceSetup from "./service/orchestrateDeviceSetup"
 
 var express = require('express')
@@ -39,12 +40,9 @@ app.use(function (req, res, next) {
 // pair device path
 app.post('/pair-device', async function (req, res, next) {
   console.log('exec /pair-device with code: ', req.body.oneTimeCode);
-  const cognitoStr =
-    req.apiGateway.event.requestContext.identity.cognitoAuthenticationProvider;
-  console.log("authorizer INFO ****");
-  const cognitoSub = cognitoStr.split(':')[2];
+  const cognitoSub = req.apiGateway.event.cognitoUserSub
   try {
-    await orchestrateDeviceSetup(req.body.oneTimeCode, cognitoSub) //    patch in cognito user id
+    await orchestrateDeviceSetup(req.body.oneTimeCode, cognitoSub)
     res.json({
       statusMessage: 'successfully paired device and created directory with sample file',
     })
@@ -56,12 +54,17 @@ app.post('/pair-device', async function (req, res, next) {
 // get user info path
 app.get('/user-info', async function (req, res, next) {
   console.log('exec /user-info');
+  let userSub: string;
+  const eventDefined: boolean = !!req.apiGateway?.event;
+  if (eventDefined) {
+    userSub = req.apiGateway.event.cognitoUserSub
+  } else {
+    userSub = process.env.COGNITO_TEST_USER_SUB
+  }
+  const userData = await fetchUserInfo(userSub);
+  console.log('userData :>> ', userData);
   try {
-    const cognitoStr =
-      req.apiGateway.event.requestContext.identity.cognitoAuthenticationProvider;
-    const cognitoSub = cognitoStr.split(':')[2];
-    console.log('cognitoSub :>> ', cognitoSub);
-    res.send('ur done')
+    res.json(userData)
   } catch (err) {
     next(err)
   }

@@ -19,7 +19,7 @@
       "function": {
         "rmXwordApi": {
           "deploymentBucketName": "amplify-xwordamplifyweb-staging-30151-deployment",
-          "s3Key": "amplify-builds/rmXwordApi-6d766a38383667645841-build.zip",
+          "s3Key": "amplify-builds/rmXwordApi-37497378586465613643-build.zip",
           "myEnvVar": "some-val"
         },
         "S3Triggerc16dbe0c": {
