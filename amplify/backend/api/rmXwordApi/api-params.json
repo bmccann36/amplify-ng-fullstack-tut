@@ -1,21 +1,6 @@
 {
     "paths": [
         {
-            "name": "/pair-device",
-            "lambdaFunction": "rmXwordApi",
-            "privacy": {
-                "private": true,
-                "auth": [
-                    "/POST",
-                    "/GET",
-                    "/PUT",
-                    "/PATCH",
-                    "/DELETE"
-                ]
-            },
-            "policyResourceName": "/pair-device"
-        },
-        {
             "name": "/user-info",
             "lambdaFunction": "rmXwordApi",
             "privacy": {
@@ -25,6 +10,17 @@
                 ]
             },
             "policyResourceName": "/user-info"
+        },
+        {
+            "name": "/pair-device",
+            "lambdaFunction": "rmXwordApi",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST"
+                ]
+            },
+            "policyResourceName": "/pair-device"
         }
     ],
     "resourceName": "rmXwordApi",
@@ -50,5 +46,5 @@
             ]
         }
     ],
-    "uuid": "ab564e55"
+    "uuid": "93f75f1a"
 }
