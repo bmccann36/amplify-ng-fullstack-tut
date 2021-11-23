@@ -1,17 +1,6 @@
 {
     "paths": [
         {
-            "name": "/user-info",
-            "lambdaFunction": "rmXwordApi",
-            "privacy": {
-                "private": true,
-                "auth": [
-                    "/GET"
-                ]
-            },
-            "policyResourceName": "/user-info"
-        },
-        {
             "name": "/pair-device",
             "lambdaFunction": "rmXwordApi",
             "privacy": {
@@ -21,6 +10,18 @@
                 ]
             },
             "policyResourceName": "/pair-device"
+        },
+        {
+            "name": "/user-info",
+            "lambdaFunction": "rmXwordApi",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/user-info"
         }
     ],
     "resourceName": "rmXwordApi",
@@ -46,5 +47,5 @@
             ]
         }
     ],
-    "uuid": "93f75f1a"
+    "uuid": "785c9126"
 }

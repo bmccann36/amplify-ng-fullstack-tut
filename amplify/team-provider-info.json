@@ -28,5 +28,35 @@
         }
       }
     }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-xwordamplifyweb-dev-83404-authRole",
+      "UnauthRoleArn": "arn:aws:iam::466357709346:role/amplify-xwordamplifyweb-dev-83404-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::466357709346:role/amplify-xwordamplifyweb-dev-83404-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-xwordamplifyweb-dev-83404-deployment",
+      "UnauthRoleName": "amplify-xwordamplifyweb-dev-83404-unauthRole",
+      "StackName": "amplify-xwordamplifyweb-dev-83404",
+      "StackId": "arn:aws:cloudformation:us-east-1:466357709346:stack/amplify-xwordamplifyweb-dev-83404/ddbf80b0-4b98-11ec-84b2-12df524e775b",
+      "AmplifyAppId": "d3e14skn26x2vt",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-xwordamplifyweb-dev-83404-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "function": {
+        "rmXwordApi": {
+          "deploymentBucketName": "amplify-xwordamplifyweb-dev-83404-deployment",
+          "s3Key": "amplify-builds/rmXwordApi-466a6c763933476e4358-build.zip",
+          "myEnvVar": "some-val"
+        },
+        "S3Triggerc16dbe0c": {
+          "deploymentBucketName": "amplify-xwordamplifyweb-dev-83404-deployment",
+          "s3Key": "amplify-builds/S3Triggerc16dbe0c-4649786a767a68696865-build.zip"
+        }
+      },
+      "auth": {
+        "xwordamplifywebc2866cea": {}
+      }
+    }
   }
 }
