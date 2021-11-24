@@ -8,12 +8,12 @@ See the License for the specific language governing permissions and limitations 
 
 
 /* Amplify Params - DO NOT EDIT
-	ENV
-	REGION
-	STORAGE_PUZZLEBUCKET_BUCKETNAME
-	STORAGE_RMXWORDDB_ARN
-	STORAGE_RMXWORDDB_NAME
-	STORAGE_RMXWORDDB_STREAMARN
+  ENV
+  REGION
+  STORAGE_PUZZLEBUCKET_BUCKETNAME
+  STORAGE_RMXWORDDB_ARN
+  STORAGE_RMXWORDDB_NAME
+  STORAGE_RMXWORDDB_STREAMARN
 Amplify Params - DO NOT EDIT */
 
 var express = require('express')
@@ -26,7 +26,7 @@ app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
 
 // Enable CORS for all methods
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Headers", "*")
   next()
@@ -36,23 +36,26 @@ app.use(function(req, res, next) {
 * Example post method *
 ****************************/
 
-app.post('/pair-device', function(req, res) {
+app.post('/pair-device', function (req, res) {
   // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
+  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
 });
 
 /****************************
 * Example put method *
 ****************************/
 
-app.put('/pair-device', function(req, res) {
+app.put('/pair-device', function (req, res) {
   // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
+  res.json({ success: 'put call succeed!', url: req.url, body: req.body })
 });
 
+app.get('/user-info', function (req, res) {
+  res.json({ success: 'you called user info' })
+});
 
-app.listen(3000, function() {
-    console.log("App started")
+app.listen(3000, function () {
+  console.log("App started")
 });
 
 // Export the app object. When executing the application local this does nothing. However,

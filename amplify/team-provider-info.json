@@ -50,7 +50,7 @@
         },
         "rmXwordBackend": {
           "deploymentBucketName": "amplify-xwordamplifyweb-dev-83404-deployment",
-          "s3Key": "amplify-builds/rmXwordBackend-4a333762394c566e594c-build.zip"
+          "s3Key": "amplify-builds/rmXwordBackend-68424b4b3662354e5278-build.zip"
         }
       },
       "auth": {
