@@ -124,7 +124,7 @@
                           }
                         ]
                       },
-                      "/POST/user-info/*"
+                      "/PUT/pair-device/*"
                     ]
                   ]
                 },
@@ -154,7 +154,7 @@
                           }
                         ]
                       },
-                      "/POST/user-info"
+                      "/PUT/pair-device"
                     ]
                   ]
                 },
@@ -184,7 +184,7 @@
                           }
                         ]
                       },
-                      "/GET/user-info/*"
+                      "/PATCH/pair-device/*"
                     ]
                   ]
                 },
@@ -214,7 +214,7 @@
                           }
                         ]
                       },
-                      "/GET/user-info"
+                      "/PATCH/pair-device"
                     ]
                   ]
                 }

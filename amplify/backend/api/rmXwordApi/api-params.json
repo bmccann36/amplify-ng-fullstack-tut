@@ -1,51 +1,40 @@
 {
-    "paths": [
-        {
-            "name": "/pair-device",
-            "lambdaFunction": "rmXwordApi",
-            "privacy": {
-                "private": true,
-                "auth": [
-                    "/POST"
-                ]
-            },
-            "policyResourceName": "/pair-device"
-        },
-        {
-            "name": "/user-info",
-            "lambdaFunction": "rmXwordApi",
-            "privacy": {
-                "private": true,
-                "auth": [
-                    "/POST",
-                    "/GET"
-                ]
-            },
-            "policyResourceName": "/user-info"
-        }
-    ],
-    "resourceName": "rmXwordApi",
-    "apiName": "rmXwordApi",
-    "functionArns": [
-        {
-            "lambdaFunction": "rmXwordApi"
-        }
-    ],
-    "privacy": {
-        "auth": 2,
-        "unauth": 0,
-        "authRoleName": "amplify-xwordamplifyweb-staging-30151-authRole",
-        "unAuthRoleName": "amplify-xwordamplifyweb-staging-30151-unauthRole"
-    },
-    "dependsOn": [
-        {
-            "category": "function",
-            "resourceName": "rmXwordApi",
-            "attributes": [
-                "Name",
-                "Arn"
-            ]
-        }
-    ],
-    "uuid": "785c9126"
+  "paths": [
+    {
+      "name": "/pair-device",
+      "lambdaFunction": "rmXwordBackend",
+      "privacy": {
+        "private": true,
+        "auth": [
+          "/POST",
+          "/PUT",
+          "/PATCH"
+        ]
+      },
+      "policyResourceName": "/pair-device"
+    }
+  ],
+  "resourceName": "rmXwordApi",
+  "apiName": "rmXwordApi",
+  "functionArns": [
+    {
+      "lambdaFunction": "rmXwordBackend"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 0,
+    "authRoleName": "amplify-xwordamplifyweb-dev-83404-authRole",
+    "unAuthRoleName": "amplify-xwordamplifyweb-dev-83404-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "rmXwordBackend",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
 }

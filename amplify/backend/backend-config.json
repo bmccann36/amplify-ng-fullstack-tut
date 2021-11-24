@@ -46,18 +46,16 @@
     }
   },
   "function": {
-    "rmXwordApi": {
+    "S3Triggerc16dbe0c": {
+      "service": "Lambda",
+      "providerPlugin": "awscloudformation",
+      "build": true
+    },
+    "rmXwordBackend": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": [
-        {
-          "category": "auth",
-          "resourceName": "xwordamplifywebc2866cea",
-          "attributes": [
-            "UserPoolId"
-          ]
-        },
         {
           "category": "storage",
           "resourceName": "rmXwordDb",
@@ -75,11 +73,6 @@
           ]
         }
       ]
-    },
-    "S3Triggerc16dbe0c": {
-      "service": "Lambda",
-      "providerPlugin": "awscloudformation",
-      "build": true
     }
   },
   "api": {
@@ -89,7 +82,7 @@
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "rmXwordApi",
+          "resourceName": "rmXwordBackend",
           "attributes": [
             "Name",
             "Arn"

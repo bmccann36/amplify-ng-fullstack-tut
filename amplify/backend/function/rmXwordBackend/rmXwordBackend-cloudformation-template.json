@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.4.4\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.4.5\",\"stackType\":\"function-Lambda\",\"metadata\":{}}",
   "Parameters": {
     "CloudWatchRule": {
       "Type": "String",
@@ -15,10 +15,6 @@
     },
     "s3Key": {
       "Type": "String"
-    },
-    "authxwordamplifywebc2866ceaUserPoolId": {
-      "Type": "String",
-      "Default": "authxwordamplifywebc2866ceaUserPoolId"
     },
     "storagermXwordDbName": {
       "Type": "String",
@@ -35,9 +31,6 @@
     "storagepuzzleBucketBucketName": {
       "Type": "String",
       "Default": "storagepuzzleBucketBucketName"
-    },
-    "myEnvVar": {
-      "Type": "String"
     }
   },
   "Conditions": {
@@ -70,12 +63,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "rmXwordApi",
+            "rmXwordBackend",
             {
               "Fn::Join": [
                 "",
                 [
-                  "rmXwordApi",
+                  "rmXwordBackend",
                   "-",
                   {
                     "Ref": "env"
@@ -93,9 +86,6 @@
             "REGION": {
               "Ref": "AWS::Region"
             },
-            "AUTH_XWORDAMPLIFYWEBC2866CEA_USERPOOLID": {
-              "Ref": "authxwordamplifywebc2866ceaUserPoolId"
-            },
             "STORAGE_RMXWORDDB_NAME": {
               "Ref": "storagermXwordDbName"
             },
@@ -107,9 +97,6 @@
             },
             "STORAGE_PUZZLEBUCKET_BUCKETNAME": {
               "Ref": "storagepuzzleBucketBucketName"
-            },
-            "MY_ENV_VAR": {
-              "Ref": "myEnvVar"
             }
           }
         },
@@ -130,12 +117,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "xwordamplifywebLambdaRolec7525b79",
+            "xwordamplifywebLambdaRole7bf7abb5",
             {
               "Fn::Join": [
                 "",
                 [
-                  "xwordamplifywebLambdaRolec7525b79",
+                  "xwordamplifywebLambdaRole7bf7abb5",
                   "-",
                   {
                     "Ref": "env"
@@ -221,46 +208,6 @@
         "PolicyDocument": {
           "Version": "2012-10-17",
           "Statement": [
-            {
-              "Effect": "Allow",
-              "Action": [
-                "cognito-identity:Describe*",
-                "cognito-identity:Get*",
-                "cognito-identity:List*",
-                "cognito-idp:Describe*",
-                "cognito-idp:AdminGetDevice",
-                "cognito-idp:AdminGetUser",
-                "cognito-idp:AdminList*",
-                "cognito-idp:List*",
-                "cognito-sync:Describe*",
-                "cognito-sync:Get*",
-                "cognito-sync:List*",
-                "iam:ListOpenIdConnectProviders",
-                "iam:ListRoles",
-                "sns:ListPlatformApplications"
-              ],
-              "Resource": [
-                {
-                  "Fn::Join": [
-                    "",
-                    [
-                      "arn:aws:cognito-idp:",
-                      {
-                        "Ref": "AWS::Region"
-                      },
-                      ":",
-                      {
-                        "Ref": "AWS::AccountId"
-                      },
-                      ":userpool/",
-                      {
-                        "Ref": "authxwordamplifywebc2866ceaUserPoolId"
-                      }
-                    ]
-                  ]
-                }
-              ]
-            },
             {
               "Effect": "Allow",
               "Action": [

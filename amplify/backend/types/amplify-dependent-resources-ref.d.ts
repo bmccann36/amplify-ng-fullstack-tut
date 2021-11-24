@@ -25,13 +25,13 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "function": {
-        "rmXwordApi": {
+        "S3Triggerc16dbe0c": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
             "LambdaExecutionRole": "string"
         },
-        "S3Triggerc16dbe0c": {
+        "rmXwordBackend": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
