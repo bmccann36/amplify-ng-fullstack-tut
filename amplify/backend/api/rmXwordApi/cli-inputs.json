@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "paths": {
+    "/pair-device": {
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "update"
+        ]
+      },
+      "lambdaFunction": "rmXwordBackend"
+    },
+    "/user-info": {
+      "name": "/user-info",
+      "lambdaFunction": "rmXwordBackend",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read"
+        ]
+      }
+    }
+  }
+}

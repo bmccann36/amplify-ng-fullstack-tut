@@ -2,7 +2,7 @@
   "name": "amplify-app",
   "version": "0.0.0",
   "scripts": {
-    "amplify:rmXwordApi": "cd amplify/backend/function/rmXwordApi && tsc -p ./tsconfig.json && cd -",
+    "amplify:rmXwordBackend": "cd amplify/backend/function/rmXwordBackend && tsc -p ./tsconfig.json && cd -",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
