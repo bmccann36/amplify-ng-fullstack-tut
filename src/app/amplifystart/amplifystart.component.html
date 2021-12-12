@@ -1,10 +1,16 @@
-<!-- <amplify-authenticator > -->
-  <div>
-      Restaurants App
-      <!-- <amplify-sign-out></amplify-sign-out> -->
-  </div>
-  <br/>
-  <h2>restaurant form</h2>
+<div class="row pt-5 align-items-center justify-content-center">
 
+  <form [formGroup]="pairDeviceForm" (ngSubmit)="onSubmit()">
 
-<!-- </amplify-authenticator> -->
+    <div>
+      <label for="one time code">
+        One Time Code
+      </label>
+      <input id="oneTimeCode" type="text" formControlName="oneTimeCode">
+    </div>
+
+    <button class="button" type="submit">Pair Now</button>
+
+  </form>
+
+</div>

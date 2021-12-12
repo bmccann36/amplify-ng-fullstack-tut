@@ -9,9 +9,50 @@
       "UnauthRoleName": "amplify-xwordamplifyweb-staging-30151-unauthRole",
       "StackName": "amplify-xwordamplifyweb-staging-30151",
       "StackId": "arn:aws:cloudformation:us-east-1:466357709346:stack/amplify-xwordamplifyweb-staging-30151/c476d9c0-1ce3-11ec-86d8-0e8a3c442c39",
-      "AmplifyAppId": "d3e14skn26x2vt"
+      "AmplifyAppId": "d3e14skn26x2vt",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-xwordamplifyweb-staging-30151-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
+      "auth": {
+        "xwordamplifywebc2866cea": {}
+      },
+      "function": {
+        "rmXwordApi": {
+          "deploymentBucketName": "amplify-xwordamplifyweb-staging-30151-deployment",
+          "s3Key": "amplify-builds/rmXwordApi-37497378586465613643-build.zip",
+          "myEnvVar": "some-val"
+        },
+        "S3Triggerc16dbe0c": {
+          "deploymentBucketName": "amplify-xwordamplifyweb-staging-30151-deployment",
+          "s3Key": "amplify-builds/S3Triggerc16dbe0c-4649786a767a68696865-build.zip"
+        }
+      }
+    }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-xwordamplifyweb-dev-83404-authRole",
+      "UnauthRoleArn": "arn:aws:iam::466357709346:role/amplify-xwordamplifyweb-dev-83404-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::466357709346:role/amplify-xwordamplifyweb-dev-83404-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-xwordamplifyweb-dev-83404-deployment",
+      "UnauthRoleName": "amplify-xwordamplifyweb-dev-83404-unauthRole",
+      "StackName": "amplify-xwordamplifyweb-dev-83404",
+      "StackId": "arn:aws:cloudformation:us-east-1:466357709346:stack/amplify-xwordamplifyweb-dev-83404/ddbf80b0-4b98-11ec-84b2-12df524e775b",
+      "AmplifyAppId": "d3e14skn26x2vt",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-xwordamplifyweb-dev-83404-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "function": {
+        "S3Triggerc16dbe0c": {
+          "deploymentBucketName": "amplify-xwordamplifyweb-dev-83404-deployment",
+          "s3Key": "amplify-builds/S3Triggerc16dbe0c-4649786a767a68696865-build.zip"
+        },
+        "rmXwordBackend": {
+          "deploymentBucketName": "amplify-xwordamplifyweb-dev-83404-deployment",
+          "s3Key": "amplify-builds/rmXwordBackend-4d517250784a394d4b4d-build.zip"
+        }
+      },
       "auth": {
         "xwordamplifywebc2866cea": {}
       }

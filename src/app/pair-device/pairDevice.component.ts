@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { API } from 'aws-amplify';
 
 @Component({
   selector: 'app-stepper',
@@ -9,6 +10,7 @@ import { FormControl, Validators } from '@angular/forms';
 export class PairDeviceComponent implements OnInit {
   isPairing = false;
   pairingCompleted = false;
+  pairingError = false;
   otCode = new FormControl('',
     [Validators.required, Validators.minLength(8), Validators.maxLength(8)]
   );
@@ -19,10 +21,24 @@ export class PairDeviceComponent implements OnInit {
   async onRegisterClicked() {
     console.log('the form input is: ', this.otCode.value);
     this.isPairing = true;
-    await this.sleep(2000);
-    console.log('done sleeping');
-    this.isPairing = false;
-    this.pairingCompleted = true;
+    console.log('calling /pair-device');
+    const postInput = {
+      body: {
+        oneTimeCode: this.otCode.value
+      },
+    };
+    try {
+      const apiRes = await API.post('rmXwordApi', '/pair-device', postInput)
+      console.log('apiRes', apiRes);
+      this.isPairing = false;
+      this.pairingCompleted = true;
+    }
+    catch (apiErr) {
+      console.error(apiErr)
+      this.isPairing = false;
+      this.pairingError = true; // maybe down the line this can be an enum of different error types
+    }
+
 
   }
 

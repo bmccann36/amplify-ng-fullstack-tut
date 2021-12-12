@@ -1,7 +1,6 @@
+import { FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Restaurant } from 'src/types/Restaurant';
-import { APIService } from '../API.service';
+import { API } from 'aws-amplify';
 
 @Component({
   selector: 'app-root',
@@ -9,19 +8,30 @@ import { APIService } from '../API.service';
   styleUrls: ['./amplifystart.component.scss']
 })
 export class AmplifystartComponent implements OnInit {
-  title = 'amplify-angular-app';
-  public createForm!: FormGroup;
-  restaurants!: Array<Restaurant>;
 
-  constructor(private api: APIService, private fb: FormBuilder) { }
+  pairDeviceForm = this.formBuilder.group({
+    oneTimeCode: '',
+  });
+
+  constructor(private formBuilder: FormBuilder) { }
 
   async ngOnInit() {
-    this.createForm = this.fb.group({
-      'name': ['', Validators.required],
-      'description': ['', Validators.required],
-      'city': ['', Validators.required]
-    });
 
   }
+
+  async onSubmit(): Promise<void> {
+    // Process checkout data here
+    const oneTimeCode = this.pairDeviceForm.value.oneTimeCode;
+    console.log('calling api');
+    const postInput = {
+      body: {
+        oneTimeCode: oneTimeCode
+      },
+    };
+    const apiRes = await API.post('rmXwordApi', '/pair-device', postInput)
+    console.log('apiRes', apiRes);
+  }
+
+
 
 }
